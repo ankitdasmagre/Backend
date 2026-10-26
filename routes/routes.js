@@ -3,6 +3,9 @@ const express = require('express');
 const userController = require('../controllers/userController');
 const categoryController = require('../controllers/categoryController');
 const itemController = require('../controllers/itemController');
+const brandController = require('../controllers/brandController');
+const productController = require('../controllers/productController');
+
 const Router = express.Router();
 
             // --- User Routes ---
@@ -57,6 +60,49 @@ Router.put('/update-item/:id',itemController.updateItem);
 
 // 5. DELETE request to remove a item by ID
 Router.delete('/delete-item/:id',itemController.deleteItem);
+
+
+// --- Brand Routes ---
+
+// 1. GET request for Brand
+Router.get('/get-brand',brandController.getBrand);
+
+// 2. Post request to push / add Brand
+Router.post('/add-brand',brandController.addBrand);
+
+//  3. Get request to fetch a specific brand by ID / Find
+
+Router.get('/get-brand-id/:id',brandController.getbrandid);
+
+//  4. PUT request to update an existing Brand By ID
+
+Router.put('/update-brand/:id',brandController.updateBrand);
+
+// 5. DELETE request to remove a Brand By ID 
+
+Router.delete('/delete-brand/:id',brandController.deleteBrand);
+
+// // --- Product Routes ---
+
+// 1. Get Request for Product
+
+Router.get('/get-product',productController.getProduct);
+
+// 2. POST request to push/add Product
+
+Router.post('/add-product',productController.addProduct);
+
+// 3. GET request to fetch a specific Product by ID / Find 
+
+Router.get('/get-product-id/:id',productController.getProductid);
+
+// 4. PUT request to update an existing Product by ID
+
+Router.put('/update-product/:id',productController.updateProduct);
+
+// 5. DELETE request to remove a Product by ID
+
+Router.delete('/delete-product/:id',productController.deleteProduct);
 
 
 

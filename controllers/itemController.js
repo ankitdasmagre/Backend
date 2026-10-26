@@ -139,7 +139,7 @@ add_item: async (req,res) =>{
                 const result = await itemCollection.findByIdAndDelete(_id);
                 return res.status(200).json({
                     status:200,
-                    message:"User delete successfuly ",
+                    message:"Item delete successfuly ",
                     data:result
                     });
             } catch (error) {
